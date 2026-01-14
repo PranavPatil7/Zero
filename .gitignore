@@ -1,0 +1,20 @@
+__pycache__/
+.vscode
+venv/
+venv*
+venv-pypy/
+.pytest_cache
+.idea
+.pytype
+
+
+build
+dist
+zeroapi.egg-info
+
+.coverage
+.coverage.*
+coverage.*
+
+# code generation test directory
+test_codegen

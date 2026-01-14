@@ -1,0 +1,48 @@
+import asyncio
+import random
+import time
+
+from zero import AsyncZeroClient
+from zero.protocols.tcp import AsyncTCPClient
+
+async_client = AsyncZeroClient("localhost", 5559, protocol=AsyncTCPClient)
+# async_client = AsyncZeroClient("localhost", 5559)
+
+
+async def task(semaphore, sleep_time):
+    async with semaphore:
+        try:
+            res = await async_client.call("sleep", sleep_time)
+            if res != f"slept for {sleep_time} msecs":
+                print(f"expected: slept for {sleep_time} msecs, got: {res}")
+            # print(res)
+        except Exception as e:
+            print(f"Error calling sleep with {sleep_time}: {e}")
+
+
+async def test():
+    conc = 32
+    semaphore = asyncio.BoundedSemaphore(conc)
+
+    sleep_times = []
+    for _ in range(100):
+        sleep_times.append(random.randint(50, 500))
+
+    start = time.time()
+
+    tasks = [task(semaphore, sleep_time) for sleep_time in sleep_times]
+    await asyncio.gather(*tasks)
+
+    end = time.time()
+    time_taken_ms = 1e3 * (end - start)
+
+    print(f"total time taken: {time_taken_ms} ms")
+    print(f"average time taken: {time_taken_ms / len(tasks)} ms")
+    print(f"average time taken per process: {time_taken_ms / conc} ms")
+
+    print(f"total time in args: {sum(sleep_times)} ms")
+    print(f"average time in args: {sum(sleep_times) / len(sleep_times)} ms")
+
+
+if __name__ == "__main__":
+    asyncio.run(test())
