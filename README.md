@@ -5,22 +5,7 @@
     <em>Zero is a simple Python framework (RPC like) to build fast and high performance microservices or distributed servers</em>
 </p>
 <p align="center">
-    <a href="https://codecov.io/gh/Ananto30/zero" target="_blank">
-        <img src="https://codecov.io/gh/Ananto30/zero/branch/main/graph/badge.svg?token=k0aA0G6NLs" />
-    </a>
-    <a href="https://pypi.org/project/zeroapi/" target="_blank">
-        <img src="https://img.shields.io/pypi/v/zeroapi" />
-    </a>
-    <br>
-    <a href="https://app.codacy.com/gh/Ananto30/zero/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade">
-        <img src="https://app.codacy.com/project/badge/Grade/f6d4db49974b470f95999565f7901595"/>
-    </a>
-    <a href="https://qlty.sh/gh/Ananto30/projects/zero" target="_blank">
-        <img src="https://qlty.sh/gh/Ananto30/projects/zero/maintainability.svg" />
-    </a>
-    <a href="https://pepy.tech/project/zeroapi" target="_blank">
-        <img src="https://static.pepy.tech/badge/zeroapi" />
-    </a>
+   
 </p>
 
 <hr>
@@ -377,10 +362,3 @@ _(Sorted alphabetically)_
 | zero(async) | 41091.96              | 4.41             | 23996.18           | 8.64             |
 | zero(tcp)   | 100752.12             | 2.33             | 35812.88           | 13.48            |
 
-# Contribution
-
-Contributors are welcomed 🙏
-
-**Please leave a star ⭐ if you like Zero!**
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ananto30)
